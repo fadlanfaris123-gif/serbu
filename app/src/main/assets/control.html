@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;padding:20px}label{display:block;margin-top:12px;font-weight:bold}input{width:100%;padding:10px;margin-top:4px;box-sizing:border-box}button{margin-top:20px;width:100%;padding:14px;background:#ee4d2d;color:#fff;border:none;font-size:16px}</style>
+</head><body>
+<h2>Serbu</h2>
+<label>Link Barang</label><input id="url" placeholder="https://shopee.co.id/...">
+<label>Harga Maksimum</label><input id="price" type="number">
+<label>Jam Checkout</label><input id="time" placeholder="2026-10-25 12:00:00">
+<button onclick="save()">Simpan</button><div id="status"></div>
+<script>
+function save(){localStorage.setItem('cfg',JSON.stringify({url:url.value,price:+price.value,time:time.value}));status.innerText='Tersimpan'}
+var c=JSON.parse(localStorage.getItem('cfg')||'{}');url.value=c.url||'';price.value=c.price||'';time.value=c.time||'';
+</script></body></html>￼Enter
